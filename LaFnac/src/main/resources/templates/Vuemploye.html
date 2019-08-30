@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>La Fnac</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous" />
+</head>
+<body>
+	<h1>La Fnac employé</h1>
+	<br />
+	<div class="container">
+		<h2>Clients</h2>
+
+		<br />
+		<div class="table">
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Nom</th>
+						<th>Prenom</th>
+						<th>Adresse</th>
+						<th>Mail</th>
+						<th>password</th>
+						<th>Options</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="a:${clients}">
+						<td th:text="${a.idClient}"></td>
+						<td th:text="${a.nom}"></td>
+						<td th:text="${a.prenom}"></td>
+						<td th:text="${a.adresse}"></td>
+						<td th:text="${a.mail}"></td>
+						<td th:text="${a.password}"></td>
+						<td><a onclick="return confirm('Etes vous sur ?')"
+							th:href="@{Suprimclient(id=${a.idClient})}">Supprimer</a> <a
+							th:href="@{Editclient(id=${a.idClient})}">Modifier</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+	<br />
+	<br />
+	<div class="container">
+		<h2>dvd</h2>
+		<br /> <a th:href="@{Formulairedvd}">Ajouter un dvd</a> <br />
+		<div class="table2">
+			<table>
+				<thead>
+					<tr>
+						<th>ID DVD</th>
+						<th>Nom</th>
+						<th>Genre</th>
+						<th>Age Limite</th>
+						<th>Réalisateur</th>
+						<th>Durée du film</th>
+						<th>Production</th>
+						<th>Prix</th>
+						<th>Options</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="d:${dvds}">
+						<td th:text="${d.idDvd}"></td>
+						<td th:text="${d.nom}"></td>
+						<td th:text="${d.genre}"></td>
+						<td th:text="${d.ageLimite}"></td>
+						<td th:text="${d.realisateur}"></td>
+						<td th:text="${d.dureeFilm}"></td>
+						<td th:text="${d.production}"></td>
+						<td th:text="${d.prix}"></td>
+						<td><a onclick="return confirm('Etes vous sur ?')"
+							th:href="@{Suprimdvd(id=${d.idDvd})}">Supprimer</a> <br /> <a
+							th:href="@{Editdvd(id=${d.idDvd})}">Modifier</a></td>
+
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

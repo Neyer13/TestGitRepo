@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>Welcome</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+<style type="text/css">
+body{
+background-color: #d2d9db;
+}
+h1{
+text-align: center;
+font-family: Arial;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #18b0dc;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  text-align: center;
+  padding: 10px 10px;
+}
+img{
+widht: 25px;
+height: 25px;
+}
+.page{
+display: flex;
+text-align: center;
+justify-content: center;
+background-color: white;
+width: 900px;
+height: 1200px;
+margin-left: 250px;
+}
+.centre{
+display: flex;
+flex-direction: column;
+text-align: center;
+justify-content: center;
+align-items: center;
+}
+.image{
+widht: 40px;
+height: 40px;
+}
+</style>
+</head>
+<body>
+<ul>
+  <li><a><img src="http://tsgdoc.socsci.ru.nl/images/b/b4/Cd.png" alt="Logo"/></a></li>
+  <li><a href="Welcome"><img src="https://fr.seaicons.com/wp-content/uploads/2015/10/Home-2-icon.png" alt="Home"/></a></li>  
+   
+  <li style="float:right">
+  	<form class="form-inline my-2 my-lg-0">
+      <input type="text" placeholder="Search.." name="search"/>
+      <button type="submit"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/OOjs_UI_icon_search.svg/1024px-OOjs_UI_icon_search.svg.png"/></button>
+    </form>
+ </li>
+  	<li style="float:right"><a href="Formulaire"><img src="https://ats.msysinc.com/assets/profile_picture-0ed69bc8e30ecd8a918ac58d731a600dd1bb9918f198fad0a4c0d610bd76bf86.png"/></a></li>
+	<li style="float:right"><a href="#France"><img src="https://cdn.webshopapp.com/shops/94414/files/54002808/icone-drapeau-francais-telechargement-gratuit.jpg"/></a></li>
+	<li style="float:right"><a href="#Angleterre"><img src="https://cdn.webshopapp.com/shops/94414/files/54955694/image-drapeau-anglais-telechargement-gratuit.jpg"/></a></li>
+</ul>
+		<div class="page">
+			<div class="centre">
+						<div class="container1">
+							<h1>La Fnac</h1>
+						</div>
+							
+				
+						<div class="container2">	
+							<table class="table table-hover table-responsive">
+								  <thead class="thead-dark">
+								    <tr role="row">
+								      <th>DVD</th>
+								      <th>Id</th>
+								      <th>Nom</th>
+								      <th>Genre</th>
+								      <th>Age Limite</th>
+								      <th>Realisateur</th>
+								      <th>Duree du film</th>
+								      <th>Production</th>
+								      <th>Prix</th>
+								    </tr>
+								  </thead>
+								  <tbody>
+								
+								    <tr role="row" th:each="v:${listDvd}">
+									  <td><img class="image" src="https://www.qefak.com/icone/cddvd1.png"/></td> 
+								      <td th:text="${v.idDvd}"></td>
+								      <td th:text="${v.nom}"></td>
+								      <td th:text="${v.genre}"></td>
+								      <td th:text="${v.ageLimite}"></td>
+								      <td th:text="${v.realisateur}"></td>
+								      <td th:text="${v.dureeFilm}"></td>
+								      <td th:text="${v.production}"></td>
+								      <td th:text="${v.prix}"></td>
+								    
+								    </tr>
+								 
+								  </tbody>
+							</table>
+						</div>
+				</div>
+		</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Modifier Client</title>
+</head>
+<body>
+
+	<div class="formul">
+		<h2>S'inscrire</h2>
+		<form th:action="@{SaveClient2}" method="post" th:object="${newclient2}">
+			<br /> Id:<br /> <input type="text" th:field="${newclient2.idClient}"  name="id" disabled="disabled"/>
+			<br /> Nom:<br /> <input type="text" th:field="${newclient2.nom}" name="lastname" />
+			<br /> Prenom:<br/> <input type="text" th:field="${newclient2.prenom}" name="firstname" /> 
+			<br />Adresse:<br/><input type="text" th:field="${newclient2.adresse}" name="adress" />
+			<br /> Mail:<br /> <input type="email" th:field="${newclient2.mail}" name="mail" /> 
+			<br /> Mot de passe:<br /> <input type="text" th:field="${newclient2.password}" name="pass" /> 
+			<br /> <br /> <input type="submit" value="Valider" />
+		</form>
+	</div>
+</body>
+</html>

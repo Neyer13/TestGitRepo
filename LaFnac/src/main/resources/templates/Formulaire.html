@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>Formulaire</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous"/>
+<style type="text/css">
+body {
+	text-align: center;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #18b0dc;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	text-align: center;
+	padding: 10px 10px;
+}
+
+img {
+	widht: 25px;
+	height: 25px;
+}
+
+h2 {
+	font-size: 20px;
+}
+
+h5 {
+	font-size: 15px;
+	color: black;
+}
+
+.formulaire {
+	display: flex;
+	text-align: center;
+	justify-content: space-around;
+	align-items: center;
+	margin-left: 100px;
+	margin-right: 250px;
+}
+
+.form1 {
+	text-align: left;
+}
+
+.form2 {
+	text-align: left;
+}
+
+p.bordure_verticale {
+	height: 400px;
+	padding-right: 10px;
+	border-right: 1px solid blue;
+}
+</style>
+</head>
+<body>
+	<ul>
+		<li><a><img
+				src="http://tsgdoc.socsci.ru.nl/images/b/b4/Cd.png" alt="Logo"/></a></li>
+		<li><a href="Welcome"><img
+				src="https://fr.seaicons.com/wp-content/uploads/2015/10/Home-2-icon.png"
+				alt="Home"/></a></li>
+	</ul>
+	<br/>
+	<div class="formulaire">
+		<br/>
+		<div class="form1">
+			<h2>Se Connecter</h2>
+			<form th:action="@{Connexionclinet}">
+				Identifient:<br/> <input type="text" name="firstname" value=""/>
+				<br/> Mot de passe:<br/> <input type="password"
+					name="lastname" value=""/> <br/>
+				<br/> <input type="submit" value="Valider"/>
+			</form>
+		</div>
+
+		<p class="bordure_verticale">
+			<br/> <br/>
+		</p>
+
+		<div class="form2">
+			<h2>S'inscrire</h2>
+			<form th:action="@{SaveClient}" method="post" th:object="${newclient}">
+				<br/> Nom:<br/> <input type="text" th:field="${newclient.nom}" name="lastname"/>
+				<br/> Prenom:<br/> <input type="text" th:field="${newclient.prenom}" name="firstname" />
+				<br/>Adresse:<br/> <input type="text" th:field="${newclient.adresse}" name="adress" /> 
+				<br/> Mail:<br/> <input type="email" th:field="${newclient.mail}" name="mail"/>
+				<br/> Mot de passe:<br/> <input type="text" th:field="${newclient.password}" name="pass" /> 
+				<br/>
+				<br/> <input type="submit" value="Valider"/>
+			</form>
+		</div>
+	</div>
+
+	<br/>
+	<br/>
+	<h5>
+		<a href="FormulaireEmployeur">Employeur</a>
+	</h5>
+
+	<script type="text/javascript">
+		
+	</script>
+
+</body>
+</html>
